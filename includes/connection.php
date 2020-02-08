@@ -15,10 +15,10 @@ if ($_SERVER['HTTP_HOST'] == "localhost" or $_SERVER['HTTP_HOST'] == "http://shw
 	//local live
 
 
-	DEFINE('DB_USER', 'baganhis_shwelivetv');
-	DEFINE('DB_PASSWORD', 'shwelivetv');
+	DEFINE('DB_USER', 'baganhis_shwemovies');
+	DEFINE('DB_PASSWORD', 'baganhis_shwemovies');
 	DEFINE('DB_HOST', 'baganhistory.com');
-	DEFINE('DB_NAME', 'baganhis_livetv');
+	DEFINE('DB_NAME', 'baganhis_shwemovies');
 }
 
 	
