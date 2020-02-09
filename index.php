@@ -36,7 +36,7 @@
         <div class="app-block">
           <div class="app-form login-form">
             <div class="form-header">
-              <div class="app-brand"><?php echo APP_NAME;?></div>
+              <div class="app-brand"><?php echo APP_NAME;?> lee kth</div>
             </div>
 			<div class="login_title_lineitem">
 				<div class="line_1"></div>
