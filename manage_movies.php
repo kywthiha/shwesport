@@ -149,7 +149,7 @@
                 <div class="checkbox">
                   <input type="checkbox" name="checkall" id="checkall" value="">
                   <label for="checkall">Select All</label>
-                  <button type="submit" class="btn btn-danger btn_delete" name="delete_rec" value="delete_wall">Delete</button>
+                  <button type="submit" class="btn btn-danger btn_delete" name="delete_rec" value="delete_all">Delete</button>
                 </div> 
             </div>
           </div>
