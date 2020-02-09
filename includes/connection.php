@@ -15,10 +15,10 @@ if ($_SERVER['HTTP_HOST'] == "localhost" or $_SERVER['HTTP_HOST'] == "http://shw
 	//local live
 
 
-	DEFINE('DB_USER', '2frV1Z8bZ8');
-	DEFINE('DB_PASSWORD', 'WPJsLXSchP');
+	DEFINE('DB_USER', 'bmTQMYLyq0');
+	DEFINE('DB_PASSWORD', 'FOdDp3U8te');
 	DEFINE('DB_HOST', 'remotemysql.com');
-	DEFINE('DB_NAME', '2frV1Z8bZ8');
+	DEFINE('DB_NAME', 'bmTQMYLyq0');
 }
 
 	
