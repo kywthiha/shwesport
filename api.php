@@ -1001,15 +1001,15 @@
   		if($genre_id[0]!=''){
 			$column='';
 			foreach ($genre_id as $key => $value) {
-				$column.='FIND_IN_SET('.$value.', movie.`genre_id`) OR ';
+				$column.='FIND_IN_SET('.$value.', hightlight.`genre_id`) OR ';
 			}
 
 			$column=rtrim($column,'OR ');
 
-			$query="SELECT movie.*, lang.`language_name`, lang.`language_background` FROM tbl_movies movie
-				LEFT JOIN tbl_language lang ON movie.`language_id`=lang.`id`
-				LEFT JOIN tbl_genres genres ON movie.`genre_id`=genres.`gid`
-				WHERE ($column) AND movie.`status`='1' AND lang.`status`='1' ORDER BY movie.`id` DESC LIMIT $limit, $page_limit";
+			$query="SELECT hightlight.*, lang.`language_name`, lang.`language_background` FROM tbl_highlights hightlight
+				LEFT JOIN tbl_language lang ON hightlight.`language_id`=lang.`id`
+				LEFT JOIN tbl_genres genres ON hightlight.`genre_id`=genres.`gid`
+				WHERE ($column) AND hightlight.`status`='1' AND lang.`status`='1' ORDER BY hightlight.`id` DESC LIMIT $limit, $page_limit";
 
 		}
 
