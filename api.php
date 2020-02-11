@@ -994,11 +994,11 @@
 
 		$limit=($get_method['page']-1) * $page_limit;
 
-			$genre_id=explode(',', $get_method['genre_id']);	// 2, 4
+  		$genre_id=explode(',', $get_method['genre_id']);	// 2, 4
 
-			$jsonObj= array();
+  		$jsonObj= array();
 
-			if($genre_id[0]!=''){
+  		if($genre_id[0]!=''){
 			$column='';
 			foreach ($genre_id as $key => $value) {
 				$column.='FIND_IN_SET('.$value.', movie.`genre_id`) OR ';
@@ -1006,9 +1006,10 @@
 
 			$column=rtrim($column,'OR ');
 
-			$query="SELECT movie.* FROM tbl_highlights movie ORDER BY movie.`id` DESC LIMIT $limit, $page_limit";
-
-
+			$query="SELECT movie.*, lang.`language_name`, lang.`language_background` FROM tbl_movies movie
+				LEFT JOIN tbl_language lang ON movie.`language_id`=lang.`id`
+				LEFT JOIN tbl_genres genres ON movie.`genre_id`=genres.`gid`
+				WHERE ($column) AND movie.`status`='1' AND lang.`status`='1' ORDER BY movie.`id` DESC LIMIT $limit, $page_limit";
 
 		}
 
@@ -1054,8 +1055,8 @@
 
 		$set['LIVETV'] = $jsonObj;
 
-			header( 'Content-Type: application/json; charset=utf-8' );
-			echo $val= str_replace('\\/', '/', json_encode($set,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+  		header( 'Content-Type: application/json; charset=utf-8' );
+	    echo $val= str_replace('\\/', '/', json_encode($set,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
 		die();
 		}
 
